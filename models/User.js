@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
-const UserSchema = Schema({
+const UserSchema = mongoose.Schema({
   name: {
     type: String,
     required: [true, 'is required'],
@@ -43,7 +43,7 @@ const UserSchema = Schema({
     default: []
   },
 
-  orders: [{ type: Schema.Types.ObjectId, ref: 'Order' }]
+  orders: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Order' }]
 }, { minimize: false });
 
 UserSchema.statics.findByCredentials = async function(email, password) {
