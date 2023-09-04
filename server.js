@@ -12,6 +12,7 @@ const io = new Server(server, {
 
 const User  = require('./models/User');
 const userRoutes = require('./routes/userRoutes');
+const productRoutes = require('./routes/productRoutes');
 
 
 app.use(cors());
